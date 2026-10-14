@@ -124,31 +124,12 @@ Tests are in `tests/`, sample data in `data/example.jsonl`.
 `N` = number of lines, `L` = line length, `U` = unique ids, `D` = days, `T` = event types.
 
 - **Time: O(N · L).** Every line is read and parsed once, and parsing is the largest cost.
-  Duplicate check: O(len(id)) expected. Summary update: O(log D + log T + len(username)),
-  effectively constant because `D` and `T` are small.
+  Duplicate check: O(len(id)) expected.
 - **Memory: O(U + distinct (day, user) pairs).** The file, the events, the duplicates and the
-  invalid lines are not stored. Roughly 75 bytes per unique id for ids up to 15 characters
-  and 125 bytes for 36-character ids (64-bit libstdc++), so about 75-125 MB per million
-  unique ids.
-
-### Measurements
-
-Release build, synthetic data with about 10% duplicate ids.
-
-| Events | Wall time | Throughput | Peak memory |
-|---|---|---|---|
-| 100,000 | TBD | TBD | TBD |
-| 1,000,000 | TBD | TBD | TBD |
-
-### Environment
-
-- CPU / RAM: TBD
-- OS: TBD
-- Compiler and build configuration: TBD
+  invalid lines are not stored.
 
 ## Limitations and possible improvements
 
 - Only UTC timestamps ending in `Z` are accepted; deduplication is by `id` only (first wins).
 - All unique ids are kept in memory; the program is single-threaded; the report is plain text.
-- Ideas: JSON output, a `--keep last` option, a faster JSON parser (e.g. simdjson),
-  `reserve()` on the id set, parallel parsing of file chunks.
+- Ideas: JSON output, a `--keep last` option.
