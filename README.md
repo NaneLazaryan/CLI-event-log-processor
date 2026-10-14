@@ -93,7 +93,7 @@ Tests are in `tests/`, sample data in `data/example.jsonl`.
 | Purpose | Choice | Why |
 |---|---|---|
 | Ids already seen | `std::unordered_set<std::string>` | one call tests and records an id in expected O(1); exact; the ids need no ordering (`std::set` would also work) |
-| Days | `std::map<std::string, DaySummary>` | few days; ISO dates sort correctly as text, so the report is in date order without a sort |
+| Days | `std::map<std::string, DaySummary>` | ISO dates sort correctly as text, so iterating the map gives the report in date order with no extra sort. Lookup is O(log D) on 10-character keys. |
 | Events per type | `std::map<std::string, size_t>` | few types; alphabetical output for free |
 | Users per day | `std::unordered_set<std::string>` | exact distinct count, expected O(1) per event |
 
