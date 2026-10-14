@@ -133,3 +133,7 @@ Tests are in `tests/`, sample data in `data/example.jsonl`.
 - Only UTC timestamps ending in `Z` are accepted; deduplication is by `id` only (first wins).
 - All unique ids are kept in memory; the program is single-threaded; the report is plain text.
 - Ideas: JSON output, a `--keep last` option.
+
+## AI tools used
+  * ChatGPT: for understanding task requirements, analysis, and exploring new concepts
+  * Claude.ai: for discussing design options, developing testing ideas, debugging
