@@ -7,7 +7,7 @@ statistics plus a daily summary. It works in a single streaming pass.
 
 Requirements: a C++17 compiler (developed with Visual Studio / MSVC) and CMake 3.14+.
 The first configure needs internet access: CMake downloads nlohmann/json 3.11.3 and
-GoogleTest 1.14.0 with `FetchContent`.
+GoogleTest 1.14.0.
 
 **Visual Studio:** `File > Open > Folder...`, select the project root, choose `logproc.exe`
 as the startup item and build.
