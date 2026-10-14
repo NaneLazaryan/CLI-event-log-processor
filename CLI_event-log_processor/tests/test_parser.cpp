@@ -1,12 +1,6 @@
 #include <gtest/gtest.h>
-
 #include <string>
-
 #include "parser.h"
-
-// ---------------------------------------------------------------------------
-// parse_event: one JSONL line -> std::optional<Event>
-// ---------------------------------------------------------------------------
 
 TEST(Parser, ValidLine) {
     auto e = parse_event(R"({"id":"e1","timestamp":"2026-10-01T12:00:00Z","type":"login","username":"alice"})");
@@ -53,9 +47,6 @@ TEST(Parser, InvalidTimestampMakesLineInvalid) {
     EXPECT_FALSE(parse_event(R"({"id":"e1","timestamp":"not-a-timestamp","type":"login","username":"alice"})"));
 }
 
-// ---------------------------------------------------------------------------
-// is_valid_timestamp: UTC ISO-8601, YYYY-MM-DDTHH:MM:SS[.fff]Z
-// ---------------------------------------------------------------------------
 
 TEST(Timestamp, ValidForms) {
     EXPECT_TRUE(is_valid_timestamp("2026-10-01T12:34:56Z"));
@@ -76,8 +67,6 @@ TEST(Timestamp, InvalidFormat) {
     EXPECT_FALSE(is_valid_timestamp("2026-10-01T12:34:56"));       // no 'Z'
     EXPECT_FALSE(is_valid_timestamp("2026-10-01T12:34:56+02:00")); // offsets are not accepted
     EXPECT_FALSE(is_valid_timestamp("2026-10-01T12:34:56.Z"));     // '.' without digits
-    // Regression: every character of every digit group must be checked,
-    // not only the first one of each group.
     EXPECT_FALSE(is_valid_timestamp("20x6-10-01T12:00:00Z"));
     EXPECT_FALSE(is_valid_timestamp("2026-10-01T12:00:0xZ"));
 }
