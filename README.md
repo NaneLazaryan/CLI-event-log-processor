@@ -12,16 +12,6 @@ GoogleTest 1.14.0 with `FetchContent`.
 **Visual Studio:** `File > Open > Folder...`, select the project root, choose `logproc.exe`
 as the startup item and build.
 
-**Command line:**
-
-```
-cmake -S . -B build
-cmake --build build --config Release
-```
-
-On Linux/macOS add `-DCMAKE_BUILD_TYPE=Release` to the first command. The program is
-`build/Release/logproc.exe` with the Visual Studio generator, and `build/logproc` elsewhere.
-
 ## Usage
 
 ```
