@@ -21,7 +21,7 @@ namespace {
             type + R"(","username":")" + user + "\"}\n";
     }
 
-}  // namespace
+} 
 
 TEST(Processor, EmptyInput) {
     const Result r = run("");
@@ -100,7 +100,7 @@ TEST(Processor, WindowsLineEndingsAndMissingFinalNewline) {
     EXPECT_EQ(r.cnts.unique_events, 2u);
 }
 
-// The same content as data/sample.jsonl, with numbers computed by hand.
+// The same content computed by hand.
 TEST(Processor, HandComputedSample) {
     const Result r = run(R"JSONL({"id":"e001","timestamp":"2026-10-01T08:15:00Z","type":"login","username":"alice"}
 {"id":"e002","timestamp":"2026-10-01T09:30:12Z","type":"purchase","username":"bob"}
