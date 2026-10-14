@@ -117,9 +117,6 @@ Tests are in `tests/`, sample data in `data/example.jsonl`.
 | `Processor` | 8 | empty input, blank vs invalid lines, first duplicate wins, day boundary, sorted days, daily totals / types / users, CRLF and missing final newline, hand-computed sample |
 | `Report` | 2 | empty result, statistics and daily lines |
 
-Run them from Visual Studio **Test Explorer**, or with
-`ctest --test-dir build -C Release --output-on-failure` (omit `-C Release` outside Visual Studio).
-
 ## Performance
 
 ### Complexity
