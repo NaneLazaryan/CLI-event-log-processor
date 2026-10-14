@@ -23,7 +23,7 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-# Your code: library + executable 
+# Լibrary + executable 
 add_library(logproc_lib src/parser.cpp src/event_processor.cpp)
 target_include_directories(logproc_lib PUBLIC src)
 target_link_libraries(logproc_lib PUBLIC nlohmann_json::nlohmann_json)
