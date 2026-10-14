@@ -1,1 +1,13 @@
-
+{"id": "e001", "timestamp": "2026-10-01T08:15:00Z", "type": "login","username": "alice"}
+{"id": "e002", "timestamp": "2026-10-01T09:30:12Z", "type": "purchase","username": "bob"}
+{"id": "e003", "timestamp": "2026-10-01T23:59:59Z", "type": "logout","username": "alice"}
+{"id": "e004", "timestamp": "2026-10-02T00:00:00Z", "type": "login","username": "carol"}
+{"id": "e002", "timestamp": "2026-10-01T09:30:12Z", "type": "purchase","username": "bob"}
+{"id": "e005", "timestamp": "2026-10-02T10:05:41Z", "type": "purchase","username": "alice"}
+{"id": "e006", "timestamp": "2026-10-02T11:20:00Z", "type": "login","username": "bob"}
+{this  is not valid json    					    	    
+{"id": "e007", "timestamp": "2026-10-02T12:00:00Z", "type": "login"}
+{"id": "e008", "timestamp": "2026-10-03T07:45:30Z", "type": "logout","username": "carol"}
+{"id": "e004", "timestamp": "2026-10-02T00:00:00Z", "type": "login","username": "carol"}
+{"id": "e009", "timestamp": "not-a-timestamp", "type": "login","username": "dave"}
+ 
